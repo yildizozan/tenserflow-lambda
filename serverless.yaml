@@ -6,6 +6,15 @@ provider:
   stage: dev
   region: eu-central-1
 
+functions:
+  app:
+    handler: wsgi_handler.handler
+    events:
+      - http: ANY /
+      - http: ANY {proxy+}
+    layers:
+      - {Ref: PythonRequirementsLambdaLayer}
+
 plugins:
   - serverless-wsgi
   - serverless-python-requirements
@@ -16,11 +25,4 @@ custom:
     packRequirements: false
     pythonBin: python3
   pythonRequirements:
-    slim: true
-
-functions:
-  app:
-    handler: wsgi_handler.handler
-    events:
-      - http: ANY /
-      - http: ANY {proxy+}
+    layer: true

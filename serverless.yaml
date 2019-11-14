@@ -21,8 +21,6 @@ plugins:
 
 custom:
   wsgi:
-    app: src/app.app
-    packRequirements: false
-    pythonBin: python3
+    app: src/app.app 
   pythonRequirements:
     layer: true

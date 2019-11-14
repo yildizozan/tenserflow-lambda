@@ -12,8 +12,6 @@ functions:
     events:
       - http: ANY /
       - http: ANY {proxy+}
-    layers:
-      - {Ref: PythonRequirementsLambdaLayer}
 
 plugins:
   - serverless-wsgi
@@ -21,6 +19,4 @@ plugins:
 
 custom:
   wsgi:
-    app: src/app.app 
-  pythonRequirements:
-    layer: true
+    app: src/app.app

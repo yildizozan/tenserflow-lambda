@@ -20,3 +20,5 @@ plugins:
 custom:
   wsgi:
     app: src/app.app
+  pythonRequirements:
+    pythonBin: /opt/hostedtoolcache/Python/3.6.9/x64/bin/python

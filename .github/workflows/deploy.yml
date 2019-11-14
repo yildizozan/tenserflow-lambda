@@ -14,8 +14,9 @@ jobs:
       uses: actions/setup-python@v1.1.1
       with:
         python-version: '3.6'
-    - run: python -version
-    - run: python2 -version
+    - run: python --version
+    - run: python2 --version
+    - run: python3 --version
 
     - name: Setup node
       uses: actions/setup-node@v1

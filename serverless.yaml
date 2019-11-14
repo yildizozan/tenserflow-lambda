@@ -1,0 +1,26 @@
+service: app
+
+provider:
+  name: aws
+  runtime: python3
+  stage: dev
+  region: eu-central-1
+
+plugins:
+  - serverless-wsgi
+  - serverless-python-requirements
+
+custom:
+  wsgi:
+    app: src/app.app
+    packRequirements: false
+    pythonBin: python3
+  pythonRequirements:
+    slim: true
+
+functions:
+  app:
+    handler: wsgi_handler.handler
+    events:
+      - http: ANY /
+      - http: ANY {proxy+}

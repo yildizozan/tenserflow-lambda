@@ -10,13 +10,15 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
+    - name: Setup Python environment
+      uses: actions/setup-python@v1.1.1
+      with:
+        python-version: '3.6'
+
     - name: npm install
       uses: actions/npm@master
       with:
         args: install
-
-    - name: Setup Python environment
-      uses: actions/setup-python@v1.1.1
 
     - name: serverless deploy
       uses: serverless/github-action@master

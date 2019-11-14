@@ -18,6 +18,8 @@ jobs:
       - run: yarn install
 
       - run: python --version
+      - run: /usr/bin/python --version
+      - run: /usr/local/bin/python --version
       - run: python2 --version
       - run: python3 --version
       - run: which python
